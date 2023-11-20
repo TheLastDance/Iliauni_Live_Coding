@@ -17,6 +17,7 @@ module.exports = {
       { allowConstantExport: true },
     ],
     'no-unused-vars': 'warn',
-    'react-hooks/exhaustive-deps': 'off'
+    'react-hooks/exhaustive-deps': 'off',
+    "react/prop-types": 'off'
   },
 }
