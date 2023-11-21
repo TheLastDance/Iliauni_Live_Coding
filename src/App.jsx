@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect } from 'react'
 import './App.css'
 
 const keys = {
@@ -14,16 +14,12 @@ function App() {
   const [selected, setSelected] = useState(null);
   const [timer, setTimer] = useState(0);
   const [countTries, setCountTries] = useState(1);
-  const avoidRender = useRef(false); // to avoid first render on strictmode
 
   useEffect(() => {
-    if (avoidRender.current) {
-      fetch('https://random-colors-lovat.vercel.app')
-        .then(res => res.json())
-        .then(json => setData(json))
-        .catch(err => console.log(err))
-    }
-    avoidRender.current = true;
+    fetch('https://random-colors-lovat.vercel.app')
+      .then(res => res.json())
+      .then(json => setData(json))
+      .catch(err => console.log(err))
   }, [countTries]);
 
   const checker = () => {
