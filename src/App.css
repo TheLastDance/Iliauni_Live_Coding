@@ -1,17 +1,23 @@
 body {
   min-height: 100svh;
-  background: var(--mainBgColor)
 }
 
 main {
-  width: 1200px;
+  width: 100%;
+  background: var(--mainBgColor);
+}
+
+.main_container {
+  width: 1100px;
+  min-height: 65svh;
   margin: 0 auto;
+  background: var(--mainBgColor);
 }
 
 .info_container {
   display: flex;
   justify-content: space-between;
-  margin-top: 25px;
+  padding-top: 25px;
 }
 
 .info_container .color_quiz {
@@ -33,6 +39,12 @@ main {
   align-items: center;
 }
 
+.quiz_container p {
+  color: #191D63;
+  font-size: 28px;
+  font-weight: 700;
+}
+
 .visible_color {
   width: 300px;
   height: 150px;
@@ -44,12 +56,7 @@ ul {
 }
 
 ul li {
-  display: flex;
-  justify-content: space-around;
-  background: white;
   width: 100%;
-  padding: 16px 24px;
-  margin: 10px 0;
 }
 
 .keys {
@@ -63,7 +70,27 @@ ul li {
 }
 
 ul li button {
+  position: relative;
   width: 100%;
+  display: flex;
+  align-items: center;
+  background: white;
+  width: 100%;
+  padding: 16px 24px;
+  margin: 10px 0;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+ul li button span:nth-child(2) {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+ul li button:focus {
+  border: 2px solid blue;
 }
 
 .score_info {
@@ -71,4 +98,46 @@ ul li button {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  flex-grow: 1;
+  font-size: 48px;
+  font-weight: 700;
+}
+
+footer {
+  width: 1100px;
+  margin: 0 auto;
+}
+
+.next_button {
+  background: white;
+  display: flex;
+  justify-content: end;
+  margin-top: 20px;
+}
+
+.next_button button {
+  padding: 20px 75px;
+  background: grey;
+  color: white;
+  cursor: pointer;
+}
+
+.next_button button:disabled {
+  background: rgba(128, 128, 128, 0.452);
+}
+
+.main_finish_container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 1100px;
+  min-height: 80svh;
+  margin: 0 auto;
+  background: var(--mainBgColor);
+}
+
+.main_finish_container .color_quiz {
+  position: absolute;
+  top: 30px;
+  font-size: 24px;
 }
